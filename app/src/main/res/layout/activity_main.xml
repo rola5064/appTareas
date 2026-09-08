@@ -1,18 +1,360 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFF5F8">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- HEADER: título + botón -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GesTask"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tareas pendientes en la base de datos(+)"
+                android:textSize="12sp"
+                android:textColor="#888888" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnNuevaTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Nueva Tarea"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:backgroundTint="#000EA1"/>
+
+    </LinearLayout>
+
+    <!-- BARRA DE BÚSQUEDA -->
+    <EditText
+        android:id="@+id/etBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Buscar por título, descripción o usuario..."
+        android:padding="12dp"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="8dp" />
+
+    <!-- TABS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnTodas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Todas"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#000EA1"/>
+
+        <Button
+            android:id="@+id/btnPendientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pendientes"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="16dp" />
+
+        <Button
+            android:id="@+id/btnEnProgreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="En Progreso"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="16dp" />
+
+    </LinearLayout>
+
+    <!-- LÍNEA DIVISORA DE TABS -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A237E"
+        android:layout_marginTop="8dp" />
+
+    <!-- LISTA DE TAREAS -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- TARJETA 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_tarea"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/check" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="Diseñar base de datos SQLite"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Estado:"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Crear el esquema de tablas para tareas, usuarios y relaciones del sistema de gestión"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginTop="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end|center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@android:drawable/ic_menu_my_calendar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="5 sep 2026"
+                        android:textColor="#1A237E"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TARJETA 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_tarea"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/check" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="Diseñar base de datos SQLite"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Estado:"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Crear el esquema de tablas para tareas, usuarios y relaciones del sistema de gestión"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginTop="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end|center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@android:drawable/ic_menu_my_calendar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="5 sep 2026"
+                        android:textColor="#1A237E"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- TARJETA 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_tarea"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/check" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="Diseñar base de datos SQLite"
+                        android:textSize="16sp"
+                        android:textColor="#333333" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Estado:"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Crear el esquema de tablas para tareas, usuarios y relaciones del sistema de gestión"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginTop="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end|center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@android:drawable/ic_menu_my_calendar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="5 sep 2026"
+                        android:textColor="#1A237E"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
