@@ -189,8 +189,7 @@
                 android:background="@drawable/bg_input"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="13sp"
-                android:focusable="false" />
+                android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>
 

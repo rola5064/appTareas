@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_tarea"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- MODIFICADO: Se le agregó el ID para manipular el icono desde Java -->
+        <ImageView
+            android:id="@+id/imgItemEstado"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/check" />
+
+        <TextView
+            android:id="@+id/tvItemTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="Título de la tarea"
+            android:textSize="16sp"
+            android:textColor="#333333" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvItemEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:text="Estado: Pendiente"
+        android:textColor="#888888"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvItemDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="40dp"
+        android:text="Descripción de la tarea..."
+        android:textColor="#888888"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE"
+        android:layout_marginTop="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end|center_vertical"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@android:drawable/ic_menu_my_calendar" />
+
+        <TextView
+            android:id="@+id/tvItemFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="5 sep 2026"
+            android:textColor="#1A237E"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

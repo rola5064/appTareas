@@ -66,34 +66,42 @@
         android:layout_marginTop="16dp"
         android:gravity="center_vertical">
 
-        <Button
+        <TextView
             android:id="@+id/btnTodas"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Todas"
-            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingVertical="8dp"
+            android:background="@drawable/bg_icono"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#000EA1"/>
+            android:gravity="center"/>
 
-        <Button
+        <TextView
             android:id="@+id/btnPendientes"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="pendientes"
-            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="Pendientes"
+            android:textSize="14sp"
+            android:paddingVertical="8dp"
             android:textColor="#000000"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="16dp" />
+            android:layout_marginStart="8dp"
+            android:gravity="center"/>
 
-        <Button
-            android:id="@+id/btnEnProgreso"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/btnCompletadas"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="En Progreso"
-            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="Completadas"
+            android:textSize="14sp"
+            android:paddingVertical="8dp"
             android:textColor="#000000"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="16dp" />
+            android:layout_marginStart="8dp"
+            android:gravity="center"/>
 
     </LinearLayout>
 
@@ -112,6 +120,7 @@
         android:layout_marginTop="16dp">
 
         <LinearLayout
+            android:id="@+id/containerTareas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
