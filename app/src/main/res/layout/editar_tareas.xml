@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:background="@drawable/editar_dialogo"
+android:padding="24dp">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Estado"
+    android:textColor="@color/gray_text"
+    android:textSize="12sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="8dp" />
+
+<TextView
+    android:id="@+id/tvTaskTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Implementar CRUD de tareas"
+    android:textColor="@color/black_text"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="16dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DESCRIPCIÓN"
+    android:textColor="@color/gray_text"
+    android:textSize="11sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="6dp" />
+
+<EditText
+    android:id="@+id/etTaskDescription"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minLines="2"
+    android:gravity="top"
+    android:background="@drawable/bg_input"
+    android:padding="12dp"
+    android:textSize="13sp"
+    android:layout_marginBottom="16dp" />
+
+<!-- ID Tarea / Asignado a -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID DE TAREA"
+            android:textColor="@color/gray_text"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etTaskId"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="13sp"
+            android:enabled="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ASIGNADO A"
+            android:textColor="@color/gray_text"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etAssignedTo"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>
+
+<!-- Fecha creación / Vencimiento -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FECHA DE CREACIÓN"
+            android:textColor="@color/gray_text"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etCreatedDate"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="13sp"
+            android:enabled="false"
+            android:focusable="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VENCIMIENTO"
+            android:textColor="@color/gray_text"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="13sp"
+            android:focusable="false" />
+    </LinearLayout>
+</LinearLayout>
+
+<!-- Cambiar estado -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="CAMBIAR ESTADO"
+    android:textColor="@color/gray_text"
+    android:textSize="11sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="10dp" />
+
+<RadioGroup
+    android:id="@+id/rgStatus"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="24dp">
+
+    <RadioButton
+        android:id="@+id/rbPending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pendiente"
+        android:textSize="13sp"
+        android:layout_marginEnd="20dp" />
+
+    <RadioButton
+        android:id="@+id/rbInProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="En Progreso"
+        android:textSize="13sp"
+        android:layout_marginEnd="20dp" />
+
+    <RadioButton
+        android:id="@+id/rbCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Completada"
+        android:textSize="13sp" />
+</RadioGroup>
+
+<!-- Botones -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/btnDelete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Eliminar"
+        android:textColor="@color/red_delete"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/btnEditTask"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_buttom"
+        android:text="Editar Tarea"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:elevation="0dp" />
+</LinearLayout>
+
+</LinearLayout>
